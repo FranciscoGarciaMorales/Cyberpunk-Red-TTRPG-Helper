@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pantalla Cyberpunk - Demo</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@400;600&family=Share+Tech+Mono&display=swap');
+
+  body{
+    background:#0b0c10;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+  }
+
+  /* Carcasa (bezel) */
+  .bezel{
+    background:#111;
+    padding:20px;
+    border:4px solid #333;
+    border-radius:18px;
+    box-shadow:0 0 20px rgba(168,85,247,0.4);
+    position:relative;
+    width:800px;
+    height:500px;
+  }
+
+  /* Cristal / pantalla */
+  .screen{
+    background:#0e0f13;
+    width:100%;
+    height:100%;
+    border-radius:8px;
+    overflow:hidden;
+    position:relative;
+    color:#e6e9ef;
+    font-family:'Rajdhani', sans-serif;
+  }
+
+  /* Reflejo */
+  .screen::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(120deg,rgba(255,255,255,0.05),transparent 60%);
+    pointer-events:none;
+  }
+
+  /* Scanlines */
+  .screen::after{
+    content:"";
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    background:repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.04) 1px,
+      transparent 2px,
+      transparent 3px
+    );
+    pointer-events:none;
+  }
+
+  /* Barra superior */
+  .topbar{
+    background:#15171e;
+    padding:6px 12px;
+    font-family:'Orbitron', sans-serif;
+    font-size:14px;
+    color:#38bdf8;
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #333;
+  }
+
+  /* Barra inferior */
+  .bottombar{
+    background:#15171e;
+    padding:4px 12px;
+    font-family:'Share Tech Mono', monospace;
+    font-size:13px;
+    color:#22d3ee;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    border-top:1px solid #333;
+  }
+
+  /* Ventana interior */
+  .window{
+    margin:20px;
+    background:#1a1c25;
+    border:1px solid #282c37;
+    border-radius:8px;
+    padding:16px;
+    color:#e6e9ef;
+    font-family:'Rajdhani', sans-serif;
+    height:calc(100% - 80px);
+    overflow:auto;
+  }
+
+  .window h2{
+    font-family:'Orbitron', sans-serif;
+    color:#a855f7;
+    text-transform:uppercase;
+    margin-top:0;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="bezel">
+    <div class="screen">
+      <div class="topbar">
+        <span>NetrunnerOS v3.1</span>
+        <span>LINK: STABLE | 12:45</span>
+      </div>
+      <div class="window">
+        <h2>Ventana de Ficha</h2>
+        <p>Aquí dentro irían tus datos del personaje.</p>
+        <p>Puedes usar <em>grid</em> o tablas para organizar las habilidades.</p>
+      </div>
+      <div class="bottombar">
+        INPUT: READY_ ▊
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
